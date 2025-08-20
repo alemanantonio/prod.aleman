@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="prod.aleman – music producer profile, latest releases, Untitled projects and social links." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <title>prod.aleman</title>
+</head>
+<body>
+  <header>
+    <h1>prod.aleman</h1>
+    <button id="toggle-lang">ES</button>
+  </header>
+
+  <main>
+    <section class="intro fade" data-en="Welcome. Music producer."
+                         data-es="Bienvenido. Productor musical.">
+      Welcome. Music producer.
+    </section>
+
+    <!-- Último lanzamiento -->
+    <section id="ultima-cancion" class="fade">
+      <h2 data-en="Latest Release" data-es="Último Lanzamiento">Latest Release</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/tpQOBvLaUxA?si=2YUNP-MrIeGK_f2s" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="fade">
+      <h2 data-en="Prod By Me" data-es="Producidas Por Mi">Prod By Me</h2>
+      <div class="proyectos-container">
+
+        <div class="proyecto" onclick="openModal('modal-vultures')">
+          <div class="proyecto-img">
+            <img src="vultures.jpg" alt="VULTURES" />
+            <button class="play-btn" onclick="event.stopPropagation(); playSnippet('audio-vultures', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>VULTURES (prod. aleman)</p>
+          <audio id="audio-vultures" src="mp3/vultures.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-donda')">
+          <div class="proyecto-img">
+            <img src="donda.jpg" alt="DONDA" />
+            <button class="play-btn" data-audio="audio-donda" onclick="event.stopPropagation(); playSnippet('audio-donda', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>DONDA (prod. aleman)</p>
+          <audio id="audio-donda" src="mp3/donda.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-bully')">
+          <div class="proyecto-img">
+            <img src="bully.jpg" alt="BULLY" />
+            <button class="play-btn" data-audio="audio-bully" onclick="event.stopPropagation(); playSnippet('audio-bully', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>BULLY (prod. aleman)</p>
+          <audio id="audio-bully" src="mp3/bully.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-war')">
+          <div class="proyecto-img">
+            <img src="war.jpg" alt="War" />
+            <button class="play-btn" data-audio="audio-war" onclick="event.stopPropagation(); playSnippet('audio-war', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>WAR (prod. aleman)</p>
+          <audio id="audio-war" src="mp3/war.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-calabasas')">
+          <div class="proyecto-img">
+            <img src="calabasas.png" alt="Calabasas" />
+            <button class="play-btn" data-audio="audio-calabasas" onclick="event.stopPropagation(); playSnippet('audio-calabasas', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>CALABASAS (prod. aleman)</p>
+          <audio id="audio-calabasas" src="mp3/calabasas.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-xo')">
+          <div class="proyecto-img">
+            <img src="xo.jpg" alt="XO" />
+            <button class="play-btn" data-audio="audio-xo" onclick="event.stopPropagation(); playSnippet('audio-xo', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>X'00 (prod. aleman)</p>
+          <audio id="audio-xo" src="mp3/xo.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-ppye')">
+          <div class="proyecto-img">
+            <img src="ppye.jpg" alt="ppye" />
+            <button class="play-btn" data-audio="audio-ppye" onclick="event.stopPropagation(); playSnippet('audio-ppye', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>PP & YE (prod. aleman)</p>
+          <audio id="audio-ppye" src="mp3/ppye.mp3"></audio>
+        </div>
+
+        <div class="proyecto" onclick="openModal('modal-levitico')">
+          <div class="proyecto-img">
+            <img src="levitico.jpg" alt="levitico" />
+            <button class="play-btn" data-audio="audio-levitico" onclick="event.stopPropagation(); playSnippet('audio-levitico', 80, 95);">
+              ▶
+            </button>
+          </div>
+          <p>LEVITICO (prod. aleman)</p>
+          <audio id="audio-levitico" src="mp3/levitico.mp3"></audio>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Más proyectos -->
+    <section id="proyectos" class="fade">
+      <h2 data-en="More Projects" data-es="Más Proyectos">More Projects</h2>
+      <div class="proyectos-container">
+        <div class="proyecto" onclick="openModal('modal-dead')">
+          <img src="dead.jpg" alt="Dead" />
+          <p>D3AD</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Escucha lo más reciente -->
+    <section id="proyectos" class="fade">
+      <h2 data-en="Listen to the Latest" data-es="Escucha Lo Mas Reciente">Listen to the Latest</h2>
+      <div class="proyectos-container">
+        <iframe style="border-radius: 24px" src="https://untitled.stream/embed/wJxXJkmcvEwO" width="100%" height="344" allowFullScreen="" allow="picture-in-picture" frameborder="0" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!--Compilaciones-->
+    <section id="proyectos" class="fade">
+      <h2 data-en="Compilations" data-es="Compilaciones">Compilations</h2>
+      <div class="proyectos-container">
+        
+      </div>
+    </section>
+
+    <!-- Redes -->
+    <section id="redes" class="fade">
+      <h2 data-en="Connect with me" data-es="Conecta conmigo">Connect with me</h2>
+      <div class="redes-container">
+        <a href="https://open.spotify.com/user/31amzqxc4lo35m5kz5fbtqpdqlsy?si=78604106c24748ec">Spotify</a>
+        <a href="https://www.youtube.com/@pord_aleman">YouTube</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 prod.aleman</p>
+  </footer>
+
+  <!-- Modals -->
+  <div id="modal-vultures" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-vultures')">&times;</span>
+      <h2>VULTURES</h2>
+      <div class="modal-body">
+        <ul class="tracklist">
+          <li>Track 1 – EVERYBODY (Ft. Backstreet Boys & Charlie Wilson)</li>
+          <li>Track 2 – BACK TO ME (Ft. Freddie Gibbs)</li>
+          <li>Track 3 – TAKE OFF YOUR DRESS</li>
+          <li>Track 4 – LIFESTYLE (Ft. Lil Wayne)</li>
+          <li>Track 5 – PROMOTION (Ft. Future)</li>
+          <li>Track 6 – RIVER (Ft. Young Thug)</li>
+          <li>Track 7 – HOOLIGANS (Ft. Rich The Kid & Playboi Carti)</li>
+          <li>Track 8 – VENOM (Ft. Don Toliver, Playboi Carti & Lil Drunk)</li>
+          <li>Track 9 – TIME MOVING SLOW (Ft. Young Moose)</li>
+          <li>Track 10 – PAID</li>
+          <li>Track 11 – HOODRAT</li>
+          <li>Track 12 – DON'T KILL THE PARTY (Ft. Tyga)</li>
+          <li>Track 13 – GUN TO MY HEAD (Ft. Kid Kudi)</li>
+          <li>Track 14 – SLIDE (Ft. James Blake)</li>
+          <li>Track 15 – FUK SUMN (Ft. Travis Scott & Playboi Carti)</li>
+          <li>Track 16 – STARS</li>
+          <li>Track 17 – BURN</li>
+          <li>Track 18 – SO CALLED FRIENDS (Ft. Freddie Gibbs)</li>
+          <li>Track 19 – IG MODELS (Ft. Lil Durk & Future)</li>
+          <li>Track 20 – DON'T DIE (Ft. Donda)</li>
+          <li>Track 21 – ONCE AGAIN (Ft. James Blake)</li>
+          <li>Track 22 – LOVE AGAIN (Ft. Lil Wayne & XXXTentacion)</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="https://untitled.stream/library/project/Fp9aP1T460SYRaHo5W4we" target="_blank" class="btn">Listen on Untitled</a>
+        <a href="https://drive.google.com/drive/folders/1460SaHZy0hJoZhNfm1OAy5cnSA28EH_w?usp=drive_link" target="_blank" class="btn">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-levitico" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-levitico')">&times;</span>
+      <h2>LEVITICO</h2>
+      <div class="modal-body">
+        <ul class="tracklist">
+          <li>Track 1 – GERVONTA</li>
+          <li>Track 2 – DIOR (Ft. Fuerza Regida & Marshmello)</li>
+          <li>Track 3 – RARI</li>
+          <li>Track 4 – VODKA PEACH (Ft. Junior H)</li>
+          <li>Track 5 – TAMAULIPAS</li>
+          <li>Track 6 – ?????</li>
+          <li>Track 7 – ?????</li>
+          <li>Track 8 – ?????</li>
+          <li>Track 9 – ?????</li>
+          <li>Track 10 – ?????</li>
+          <li>Track 11 – ?????</li>
+          <li>Track 12 – ?????</li>
+          <li>Track 13 – ?????</li>
+          <li>Track 14 – ?????</li>
+          <li>Track 15 – ?????</li>
+          <li>Track 16 – ?????</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="https://untitled.stream/library/project/YlAf0GrFhrMwoYmkSQnPw" target="_blank" class="btn">Listen on Untitled</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-ppye" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-ppye')">&times;</span>
+      <h2>PP & YE</h2>
+      <div class="modal-body">
+        <ul class="tracklist">
+          <li>Track 1 – DRUNK (Ft. J Balvin, Bad Bunny & Kodak Black)</li>
+          <li>Track 2 – BESAME MAMA</li>
+          <li>Track 3 – GIMMIE A SECOND (Ft. Rich The Kid)</li>
+          <li>Track 4 – (BONUS) SAY LESS (Ft. Childish Gambino)</li>
+          <li>Track 5 – (BONUS) GAVILAN II (Ft. Fuerza Regida)</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="https://untitled.stream/library/project/MKIPf91gQebSNYBo7ISLQ" target="_blank" class="btn">Listen on Untitled</a>
+        <a href="https://drive.google.com/drive/folders/1V6HqVqxwbm3pdLhl_mSM3uigupy5LL8z?usp=sharing" target="_blank" class="btn">Download</a>
+      </div>
+    </div>
+  </div>
+
+    <div id="modal-xo" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-xo')">&times;</span>
+        <h2>X'00</h2>
+        <div class="modal-body">
+          <ul class="tracklist">
+            <li>Track 1 – TIMELESS</li>
+            <li>Track 2 – RATHER LIE (Ft. Kanye West & Ty Dolla $ign)</li>
+            <li>Track 3 – MUSTANG</li>
+            <li>Track 4 – OUTSIDE</li>
+            <li>Track 5 – P0PULAR</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="https://untitled.stream/library/project/FfLZqvpWLzYE3vrbVfeWg" target="_blank" class="btn">Listen on Untitled</a>
+          <a href="https://drive.google.com/drive/folders/1oGzChhg9NcnspRTqV3hA7_sqh_5hq7wg?usp=sharing" target="_blank" class="btn">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-calabasas" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-calabasas')">&times;</span>
+        <h2>CALABASAS</h2>
+        <div class="modal-body">
+          <ul class="tracklist">
+            <li>Track 1 – YEEZY YEEZY JUMPMAN</li>
+            <li>Track 2 – BOUND 2 GLOW</li>
+            <li>Track 3 – FEEL NO WAY</li>
+            <li>Track 4 – FIND YOUR LOVE</li>
+            <li>Track 5 – ONE DANCE (Ft. Justin Bieber)</li>
+            <li>Track 6 – POP STYLE</li>
+            <li>Track 7 – WHEN I SEE IT (Ft. The Weeknd)</li>
+            <li>Track 8 – 24</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="https://untitled.stream/library/project/KY8TZfuUFW9bhYI2qV8Lw" target="_blank" class="btn">Listen on Untitled</a>
+          <a href="https://drive.google.com/drive/folders/14Ojzd5DFoVlREcbpRF3q2ENJlp7G0ouj?usp=sharing" target="_blank" class="btn">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-war" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-war')">&times;</span>
+        <h2>WAR</h2>
+        <div class="modal-body">
+          <ul class="tracklist">
+            <li>Track 1 – MY WAY</li>
+            <li>Track 2 – ?????</li>
+            <li>Track 3 – ?????</li>
+            <li>Track 4 – ?????</li>
+            <li>Track 5 – ?????</li>
+            <li>Track 6 – ?????</li>
+            <li>Track 7 – ?????</li>
+            <li>Track 8 – ?????</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="https://untitled.stream/library/project/fTfbVwmrahDJr7NRpiisA" target="_blank" class="btn">Listen on Untitled</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-bully" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-bully')">&times;</span>
+        <h2>BULLY</h2>
+        <div class="modal-body">
+          <ul class="tracklist">
+            <li>Track 1 – PREACHER MAN</li>
+            <li>Track 2 – ?????</li>
+            <li>Track 3 – ?????</li>
+            <li>Track 4 – ?????</li>
+            <li>Track 5 – ?????</li>
+            <li>Track 6 – ?????</li>
+            <li>Track 7 – ?????</li>
+            <li>Track 8 – ?????</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="https://untitled.stream/library/project/tJspk4VIodDFhZjBFdedM" target="_blank" class="btn">Listen on Untitled</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-donda" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-donda')">&times;</span>
+        <h2>DONDA</h2>
+        <div class="modal-body">
+          <ul class="tracklist">
+            <li>Track 1 – HURRICANE (Ft. Don Toliver, The Weeknd & Lil Baby)</li>
+            <li>Track 2 – COME TO LIFE (Ft. Stave Lacy, Sunday Service Choir & Tyler The Creator)</li>
+            <li>Track 3 – HEAVEN AND HELL (Ft. Travis Scott & SZA)</li>
+            <li>Track 4 – CITY OF GODS (Ft. Fivio Foreign & Alicia Keys)</li>
+            <li>Track 5 – OFF THE GRID (Ft. Playboi Carti, Pusha T & Fivio Foreign)</li>
+            <li>Track 6 – PABLO (Ft. Marilyn Manson, Baby Keem, Travis Scott & Future)</li>
+            <li>Track 7 – WE DID IT KID (Ft. Baby Keem, Migos & Playboi Carti)</li>
+            <li>Track 8 – FUCK FLOWERS (Ft. Ty Dolla $ign)</li>
+            <li>Track 9 – JUNYA (Ft. Playboi Carti & Ty Dolla $ign)</li>
+            <li>Track 10 – ?????</li>
+            <li>Track 11 – ?????</li>
+            <li>Track 12 – ?????</li>
+            <li>Track 13 – ?????</li>
+            <li>Track 14 – ?????</li>
+            <li>Track 15 – ?????</li>
+            <li>Track 16 – ?????</li>
+            <li>Track 17 – ?????</li>
+            <li>Track 18 – ?????</li>
+            <li>Track 19 – ?????</li>
+            <li>Track 20 – ?????</li>
+            <li>Track 21 – ?????</li>
+            <li>Track 22 – ?????</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="https://untitled.stream/library/project/MF5yElstJjO4AjCtkyuOq" target="_blank" class="btn">Listen on Untitled</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Más modals similares para cada proyecto -->
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
